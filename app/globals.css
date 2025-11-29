@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens */
+:root{
+  --color-primary: #0b8d35;
+  --color-orbit: #0b8d35; /* deep blue */
+  --color-accent: #f6ba00; /* muted gold */
+  --color-muted: #6B7280;
+  --surface: #fff;
+  --purple: rgb(232 121 249);
+  --blue: rgb(96 165 250);
+  --cyan: rgb(94 234 212);
+  --green: rgb(134 239 172);
+  --yellow: rgb(253 224 71);
+  --orange: rgb(251 146 60);
+  --red: rgb(248 113 113);
+}
+
+  .canvas-container {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    height: 100vh;
+    clip-path: circle(51.3% at 22% 0%);
+  }
+
+    .canvas-container-two {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    height: 100vh;
+    clip-path: circle(52.3% at 25% 5%);
+  }
+
+
+/* apply tokens to Tailwind classes via custom names */
+.bg-surface { background-color: var(--surface); }
+
+/* Fonts */
+html, body {
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #0b8d35;
+}
+
+
+
+.font-green {
+    color: #0b8d35;
+}
+
+/* Component helpers */
+.container { max-width: 1100px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+
+/* Subtle entrance */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeUp { animation: fadeUp 600ms ease forwards; }
+
+/* Floating decorative element */
+@keyframes floatSlow {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+.float-slow { animation: floatSlow 6s ease-in-out infinite; }
+
+/* Hero overlay pattern (subtle) */
+.pattern-faint {
+  background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px) translateX(0px); opacity: 0.6; }
+  50%  { transform: translateY(-20px) translateX(10px); opacity: 1; }
+  100% { transform: translateY(0px) translateX(0px); opacity: 0.6; }
+}
+
+@keyframes float-slow {
+  0% { transform: translate(-50%, 0px); }
+  50% { transform: translate(-50%, -12px); }
+  100% { transform: translate(-50%, 0px); }
+}
+
+.animate-float-slow {
+  animation: float-slow 10s ease-in-out infinite;
+}
