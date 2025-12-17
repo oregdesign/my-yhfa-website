@@ -1,11 +1,12 @@
 "use client";
-import "../styles/swiper-custom.css"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "./../styles/swiper-premium.css";
+import Reveal from "./Reveal";
 
 export default function AboutSection() {
   return (
@@ -14,64 +15,116 @@ export default function AboutSection() {
         
         {/* LEFT SIDE — TEXT */}
         <div className="space-y-6">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
-            About Our School
+          <Reveal delay={0}>
+          <h2 className="text-4xl lg:text-4xl font-bold text-gray-900">
+            Tentang Yayasan
           </h2>
-
+          </Reveal>
+          <Reveal delay={200}>
           <p className="text-lg leading-relaxed text-gray-700">
-            At <span className="font-semibold">YHFA Islamic School</span>, we are committed to nurturing
-            the next generation with strong Islamic values, academic excellence,
-            and meaningful personal development. Our programs are carefully
-            designed to support students in building character, leadership, and
-            spiritual awareness in a safe, joyful, and engaging learning
-            environment.
+            <span className="font-black text-[#0b8d35] ">
+            Yayasan Islam Hasanah Fathimiyah (YIHFA)</span> adalah lembaga pendidikan Islam yang berdiri dengan
+            tekad untuk menghadirkan pendidikan terbaik bagi generasi muslim di era modern. Dengan perpaduan
+            antara nilai-nilai Qur’ani, pembiasaan adab, serta kurikulum akademik yang kuat, YIHFA berkomitmen
+            mencetak anak-anak yang shaleh, cerdas, percaya diri, dan berakhlak mulia.
           </p>
 
           <p className="text-lg leading-relaxed text-gray-700">
-            We believe that every child is unique, gifted, and capable of great
-            things. Through a combination of modern teaching methods and
-            traditional Islamic principles, our teachers guide students to
-            explore their interests, express creativity, and grow into confident
-            Muslims ready to contribute positively to their communities.
+            Kami percaya bahwa pendidikan bukan hanya tentang transfer pengetahuan, namun juga tentang pembinaan
+            karakter, penanaman adab, dan pendampingan hati—agar setiap anak tumbuh menjadi pribadi yang bermanfaat
+            bagi agama, keluarga, masyarakat, dan bangsanya.
           </p>
-
-          <p className="text-lg leading-relaxed text-gray-700">
-            Our school emphasizes the balance between{" "}
-            <span className="font-semibold text-green-700">Akhlaq</span>,
-            <span className="font-semibold text-blue-700"> Knowledge</span>, and
-            <span className="font-semibold text-purple-700"> Skills</span>,
-            ensuring that students excel both academically and spiritually.
-          </p>
+          </Reveal>
         </div>
 
         {/* RIGHT SIDE — IMAGE CAROUSEL */}
-        <div className="relative w-full">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 2500 }}
-            loop={true}
-            className="rounded-3xl overflow-hidden shadow-2xl"
-          >
-            {/* 5 images */}
-            <SwiperSlide>
-              <img src="/img1.jpg" className="w-full h-96 object-cover" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/img2.jpg" className="w-full h-96 object-cover" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/img3.jpg" className="w-full h-96 object-cover" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/img4.jpg" className="w-full h-96 object-cover" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/img5.jpg" className="w-full h-96 object-cover" />
-            </SwiperSlide>
-          </Swiper>
-        </div>
+        <Reveal delay={400}>
+<div className="relative mySwiper">
+
+  {/* Custom navigation buttons */}
+  <button
+    className="custom-prev absolute left-3 top-1/2 -translate-y-1/2 z-50
+               bg-green-600/20 backdrop-blur-md rounded-full w-10 h-10
+               flex items-center justify-center shadow-xl"
+  >
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="white"
+      strokeWidth="4"      
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M15 18l-6-6 6-6" />
+    </svg>
+  </button>
+
+  <button
+    className="custom-next absolute right-3 top-1/2 -translate-y-1/2 z-50
+               bg-green-600/20 backdrop-blur-md rounded-full w-10 h-10
+               flex items-center justify-center shadow-xl"
+  >
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="white"
+      strokeWidth="4"     
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M9 6l6 6-6 6" />
+    </svg>
+  </button>
+  <Swiper
+    modules={[Navigation, Pagination, Autoplay]}
+    navigation={{
+      prevEl: ".custom-prev",
+      nextEl: ".custom-next",
+    }}
+    pagination={{ clickable: true }}
+    autoplay={{ delay: 3000 }}
+    loop={true}
+    className="rounded-3xl overflow-hidden shadow-2xl"
+  >
+    {/* 5 images */}
+    <SwiperSlide>
+      <div className="w-full aspect-[4/3] md:aspect-[4/3] overflow-hidden rounded-3xl">
+        <img src="/img1.jpg" className="w-full h-full object-cover" />
+      </div>
+    </SwiperSlide>
+
+    <SwiperSlide>
+      <div className="w-full aspect-[4/3] md:aspect-[4/3] overflow-hidden rounded-3xl">
+        <img src="/img2.jpg" className="w-full h-full object-cover" />
+      </div>
+    </SwiperSlide>
+
+    <SwiperSlide>
+      <div className="w-full aspect-[4/3] md:aspect-[4/3] overflow-hidden rounded-3xl">
+        <img src="/img3.jpg" className="w-full h-full object-cover" />
+      </div>
+    </SwiperSlide>
+
+    <SwiperSlide>
+      <div className="w-full aspect-[4/3] md:aspect-[4/3] overflow-hidden rounded-3xl">
+        <img src="/img4.jpg" className="w-full h-full object-cover" />
+      </div>
+    </SwiperSlide>
+
+    <SwiperSlide>
+      <div className="w-full aspect-[4/3] md:aspect-[4/3] overflow-hidden rounded-3xl">
+        <img src="/img5.jpg" className="w-full h-full object-cover" />
+      </div>
+    </SwiperSlide>
+
+  </Swiper>
+</div>
+</Reveal>
+
 
       </div>
     </section>

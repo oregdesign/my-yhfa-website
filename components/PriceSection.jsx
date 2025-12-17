@@ -1,36 +1,39 @@
+import { IoCheckmarkDone } from "react-icons/io5";
+import Reveal from "./Reveal";
+
 export default function PriceSection() {
   const prices = [
     {
-      title: "Kindergarten",
+      title: "(RA) Hasanah Fathimiyah",
       price: "Rp 3.500.000",
-      desc: "Intro package for early childhood Islamic education.",
+      desc: "Paket pendidikan dasar bagi anak usia dini dengan pendekatan Islam dan pembelajaran menyenangkan.",
       details: [
-        "Registration Fee Included",
-        "Uniform (2 sets)",
-        "Learning Kit Starter Pack",
-        "Activity & Field Trip Fund"
+        "Biaya Pendaftaran & Administrasi",
+        "Seragam (2 set)",
+        "Paket Perlengkapan Belajar",
+        "Dana Kegiatan & Kunjungan Edukasi"
       ]
     },
     {
-      title: "Elementary School",
+      title: "(SDIT) Hasanah Fathimiyah",
       price: "Rp 6.200.000",
-      desc: "Full Islamic elementary level education with active learning.",
+      desc: "Pendidikan dasar Islam terpadu dengan metode pembelajaran aktif dan berpengetahuan luas.",
       details: [
-        "Registration + Acceptance Fee",
-        "Uniform (3 sets)",
-        "Books & Learning Materials",
-        "Yearly Activity Program"
+        "Biaya Pendaftaran & Uang Pangkal",
+        "Seragam (3 set)",
+        "Buku dan Modul Pembelajaran",
+        "Program Kegiatan Tahunan"
       ]
     },
     {
-      title: "Junior School",
+      title: "(SMPIT) Hasanah Fathimiyah",
       price: "Rp 8.750.000",
-      desc: "Advanced middle-school Islamic curriculum with leadership.",
+      desc: "Pendidikan menengah Islam dengan kurikulum lanjutan serta pengembangan karakter & kepemimpinan.",
       details: [
-        "Registration + Development Fee",
-        "Uniform (3 sets)",
-        "Books & Islamic Studies Kit",
-        "Extracurricular Access"
+        "Biaya Pendaftaran & Pengembangan",
+        "Seragam (3 set)",
+        "Buku & Paket Studi Keislaman",
+        "Akses Ekstrakurikuler"
       ]
     }
   ];
@@ -41,17 +44,19 @@ export default function PriceSection() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-3">School Entrance Pricing</h2>
+          <Reveal delay={200}>
+          <h2 className="text-4xl font-bold mb-3">Investasi Pendidikan</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Below is the estimated entrance fee for each educational level.
-            All prices are placeholders and can be adjusted based on the
-            school's official policy.
+            Berikut adalah estimasi biaya masuk untuk setiap jenjang pendidikan.
+            Seluruh harga bersifat contoh dan dapat disesuaikan dengan kebijakan resmi sekolah.
           </p>
+          </Reveal>
         </div>
 
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-3 gap-10">
           {prices.map((item, i) => (
+            <Reveal key={i} delay={i * 200}>
             <div
               key={i}
               className="
@@ -60,7 +65,7 @@ export default function PriceSection() {
                 flex flex-col
               "
             >
-              <h3 className="text-2xl font-semibold text-green-700 mb-3">
+              <h3 className="text-xl font-semibold text-green-700 mb-3">
                 {item.title}
               </h3>
 
@@ -73,9 +78,10 @@ export default function PriceSection() {
               <ul className="space-y-3 text-gray-700 flex-grow">
                 {item.details.map((d, j) => (
                   <li key={j} className="flex items-start gap-3">
-                    <span className="text-green-600 text-lg">•</span>
+                    <IoCheckmarkDone className="text-green-600 text-4xl flex-shrink-0 mt-1" />
                     <span>{d}</span>
                   </li>
+                  
                 ))}
               </ul>
 
@@ -86,9 +92,10 @@ export default function PriceSection() {
                   font-semibold hover:bg-green-800 transition
                 "
               >
-                Learn More
+                Selengkapnyya
               </button>
             </div>
+            </Reveal>
           ))}
         </div>
 

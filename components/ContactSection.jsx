@@ -34,9 +34,9 @@ export default function ContactSection() {
 
         {/* HEADER */}
         <div className="text-center mb-14">
-          <h2 className="text-4xl font-bold mb-3">Contact & Location</h2>
+          <h2 className="text-4xl font-bold mb-3">Pesan Dan Lokasi</h2>
           <p className="text-gray-600">
-            Visit our school or send us a message for inquiries.
+            Silahkan kunjungi sekolah kami atau kirim pesan untuk mendapatkan informasi lebih lanjut.
           </p>
         </div>
 
@@ -44,9 +44,9 @@ export default function ContactSection() {
         <div className="grid md:grid-cols-2 gap-12 items-start">
 
           {/* LEFT — GOOGLE MAP */}
-          <div className="rounded-3xl overflow-hidden shadow-xl border border-green-200 h-[540px]">
+          <div className="rounded-xl overflow-hidden shadow-xl border border-green-200 h-[540px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.38705047191!2d106.80603975!3d-6.20876395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3eaaa3b3cbf%3A0xdee3c9e9f2a8d1f1!2sMonas!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0945669674425!2d107.13762577499064!3d-6.251269193737167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6985069127c8c3%3A0x2210108ae7e1f563!2sSDIT%20Hasanah%20Fathimiyah!5e0!3m2!1sen!2sid!4v1764878618393!5m2!1sen!2sid"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -57,43 +57,43 @@ export default function ContactSection() {
           </div>
 
           {/* RIGHT — CONTACT FORM */}
-          <div className="bg-white p-10 rounded-3xl shadow-xl border border-green-100">
+          <div className="bg-white p-10 rounded-xl shadow-xl border border-green-100">
             <form onSubmit={handleSubmit} className="space-y-6">
 
               <div>
                 <label className="block font-semibold text-gray-700 mb-1">
-                  Your Name
+                  Nama
                 </label>
                 <input
                   name="name"
                   required
-                  className="w-full p-3 rounded-xl border border-gray-300 
+                  className="w-full p-3 rounded-lg border border-gray-300 
                              focus:ring-2 focus:ring-green-600 outline-none"
                 />
               </div>
 
               <div>
                 <label className="block font-semibold text-gray-700 mb-1">
-                  Email Address
+                  Alamat Email
                 </label>
                 <input
                   name="email"
                   type="email"
                   required
-                  className="w-full p-3 rounded-xl border border-gray-300 
+                  className="w-full p-3 rounded-lg border border-gray-300 
                              focus:ring-2 focus:ring-green-600 outline-none"
                 />
               </div>
 
               <div>
                 <label className="block font-semibold text-gray-700 mb-1">
-                  Message
+                  Pesan
                 </label>
                 <textarea
                   name="message"
                   rows="5"
                   required
-                  className="w-full p-3 rounded-xl border border-gray-300 
+                  className="w-full p-3 rounded-lg border border-gray-300 
                              focus:ring-2 focus:ring-green-600 outline-none"
                 ></textarea>
               </div>
@@ -101,9 +101,9 @@ export default function ContactSection() {
               <button
                 type="submit"
                 className="w-full py-3 bg-green-700 text-white font-semibold 
-                           rounded-xl hover:bg-green-800 transition"
+                           rounded-lg hover:bg-green-800 transition"
               >
-                {status === "loading" ? "Sending..." : "Send Message"}
+                {status === "loading" ? "Sending..." : "Kirim Pesan"}
               </button>
 
               {status === "success" && (

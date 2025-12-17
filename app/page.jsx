@@ -16,7 +16,6 @@ export default function Home() {
       <Stats />
       <Programs />
       <VisionMission />
-      <GalleryPreview />
       <PriceSection />
       <ContactSection />
       <News />

@@ -2,9 +2,11 @@ import './globals.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import PageLoader from "../components/PageLoader"
+import FloatingWhatsapp from "../components/FloatingWhatsapp";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata = {
-  title: 'Yayasan Hasanah Fathimiyah',
+  title: 'Yayasan Islam Hasanah Fathimiyah',
   description: 'Mewujudkan Generasi Berilmu, Beriman, dan Berakhlak Mulia — Cikarang Barat',
 };
 
@@ -21,6 +23,8 @@ export default function RootLayout({ children }) {
         <Navbar />        
         <main>{children}</main>
         <Footer />
+        <FloatingWhatsapp />
+        <GoogleAnalytics gaId='G-SXKZW6QX60'/>
       </body>
     </html>
   );

@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import useCountUp from "@../../../hooks/useCountUp";
+import { arvo } from "@/../../app/font";
 
 export default function Stats() {
   const sectionRef = useRef(null);
@@ -19,24 +20,23 @@ export default function Stats() {
   }, []);
 
   const stats = [
-    { label: "Operation Since", value: 2012 },
-    { label: "Teacher Staff", value: 63 },
-    { label: "Class Rooms", value: 32 },
-    { label: "Graduated Students", value: 3825 },
-    { label: "School Trophy", value: 133 },
+    { label: "Berdiri Sejak", value: 2012 },
+    { label: "Tenaga Pengajar", value: 63 },
+    { label: "Ruang Kelas", value: 32 },
+    { label: "Piala Sekolah", value: 133 },
   ];
 
   return (
     <section ref={sectionRef} className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-12 text-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
 
           {stats.map((item, i) => {
-            const count = useCountUp(item.value, 1800, isVisible);
+            const count = useCountUp(item.value, 1100, isVisible);
 
             return (
               <div key={i} className="space-y-2">
-                <div className="text-6xl font-bold text-green-700 tracking-tight">
+                <div className={[arvo.className,"text-6xl", "font-bold", "text-green-700", "tracking-wide"].join(" ")}>
                   {count}
                 </div>
                 <p className="text-gray-600 text-sm font-medium uppercase tracking-wide">
